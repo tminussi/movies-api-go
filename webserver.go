@@ -2,7 +2,7 @@ package main
 
 import (
 	"net/http"
-	"github.com/tminussi/hello/movie/handler"
+	"github.com/tminussi/movie-api/movie/handler"
 )
 
 func main() {

@@ -2,8 +2,8 @@ package handler
 
 import (
 	"net/http"
-	"github.com/tminussi/hello/movie/model"
 	"encoding/json"
+	"github.com/tminussi/movie-api/movie/model"
 )
 
 func MovieHandler(w http.ResponseWriter, r *http.Request) {
@@ -29,9 +29,7 @@ func getMovies(w http.ResponseWriter) {
 	}
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	movies := []movie.Movie{}
-	movies = append(movies, movieOne)
-	movies = append(movies, movieTwo)
+	movies := [...]movie.Movie{movieOne, movieTwo}
 	json.NewEncoder(w).Encode(movies)
 }
 
